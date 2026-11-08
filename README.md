@@ -1,69 +1,67 @@
-# 银河系漫游指南：基地
-
-**THE HITCHHIKER'S GUIDE TO THE FOUNDATION**
+# THE HITCHHIKER'S GUIDE TO THE FOUNDATION
 
 [![PyPI](https://img.shields.io/pypi/v/foundation-guide.svg)](https://pypi.org/project/foundation-guide/) [![Python](https://img.shields.io/pypi/pyversions/foundation-guide.svg)](https://pypi.org/project/foundation-guide/)
 
-一个运行在终端里的英文文字冒险游戏。三名主角，三幕故事，三十四个场景，一百四十六件物品，二十三个角色，以及一条毛巾。
+A text adventure that runs in your terminal. Three protagonists, three acts, thirty-four locations, one hundred and forty-six objects, twenty-three characters, and one towel.
 
-故事发生在艾萨克·阿西莫夫《基地》三部曲的宇宙里，叙述方式则借用了道格拉斯·亚当斯《银河系漫游指南》的刻薄幽默。你将依次扮演盖尔·多尼克、萨尔沃·哈丁和贝泰·达瑞尔，在心理史学的裂缝里生存、谈判、解谜，并决定银河系的未来要不要被一个穿小丑服的人拿走。
+The story takes place in the universe of Isaac Asimov's *Foundation* trilogy, narrated with the dry, cosmic absurdity of Douglas Adams' *The Hitchhiker's Guide to the Galaxy*. You play Gaal Dornick, Salvor Hardin, and Bayta Darell in turn — surviving, negotiating, and solving puzzles in the cracks of psychohistory, while deciding whether the future of the galaxy should be handed to a man in a clown suit.
 
-> 本项目是粉丝作品，与阿西莫夫遗产、出版商以及并不存在的第二基地均无关系。
+> This is a fan-made work, unaffiliated with the Asimov estate, the publishers, or the Second Foundation (which does not exist).
 
 ---
 
-## 快速开始
+## Quick Start
 
-### 从 PyPI 安装
+### Install from PyPI
 
-```powershell
+```bash
 pip install foundation-guide
 foundation-guide
 ```
 
-也可以安装为独立的命令行工具：
+Or install it as a standalone command-line tool:
 
-```powershell
+```bash
 uv tool install foundation-guide
 foundation-guide
 ```
 
-### 从源码运行
+### Run from source
 
-环境要求：Python 3.11 或更高版本，以及 [uv](https://docs.astral.sh/uv/)。项目只使用 Python 标准库，没有第三方依赖。
+Requirements: Python 3.11 or newer and [uv](https://docs.astral.sh/uv/). The game uses only the Python standard library, with no third-party dependencies.
 
-在 Windows 上，直接双击：
+On Windows, double-click:
 
 ```text
 play.bat
 ```
 
-或者在项目目录中打开终端：
+Or open a terminal in the project directory:
 
 ```powershell
 cd foundation-guide
 uv run python -m foundation_guide
 ```
 
-其他平台：
+On other platforms:
 
 ```bash
 uv run python -m foundation_guide
 ```
 
-### 命令行选项
+### Command-line options
 
 ```text
---no-color        关闭 ANSI 颜色
---ascii           使用 ASCII 边框和符号
---width N         指定文本宽度
---load [名字]     读取存档（默认读取 autosave）
---script 文件     从脚本文件播放命令（测试 / 演示用）
---debug           出错时显示完整 traceback
---version         显示版本
+--no-color        disable ANSI colour
+--ascii           use ASCII box drawing
+--width N         set the text width
+--load [name]     load a save (default: autosave)
+--script FILE     play commands from a file (testing / demos)
+--debug           show full tracebacks on errors
+--version         show the version
 ```
 
-例如：
+For example:
 
 ```powershell
 uv run python -m foundation_guide --no-color --width 88
@@ -72,110 +70,110 @@ uv run python -m foundation_guide --script tests\walkthrough_full.txt --no-color
 
 ---
 
-## 三幕故事
+## The Three Acts
 
-| 幕 | 标题 | 主角 | 舞台 |
+| Act | Title | Protagonist | Setting |
 |---|---|---|---|
-| I | The Psychohistorians | 盖尔·多尼克（Gaal Dornick） | 川陀 |
-| II | The Mayors | 萨尔沃·哈丁（Salvor Hardin） | 端点星 |
-| III | The Mule | 贝泰·达瑞尔（Bayta Darell） | 卡尔甘、川陀、罗森 |
+| I | The Psychohistorians | Gaal Dornick | Trantor |
+| II | The Mayors | Salvor Hardin | Terminus |
+| III | The Mule | Bayta Darell | Kalgan, Trantor, Rossem |
 
-每一幕都有独立的场景、人物、谜题、计分和结局。完成一幕会自动进入下一幕，并在幕间写入自动存档。
+Each act has its own locations, characters, puzzle chain, scoring, and endings. Completing an act moves you automatically to the next one and writes an autosave between acts.
 
 ---
 
-## 操作方式
+## How to Play
 
-游戏接受自然的英文命令。冠词、大小写和标点基本可以忽略，`IT` / `THEM` 会指代上一个提到的对象。
+The game accepts natural English commands. Articles, capitalisation, and punctuation are mostly ignored, and `IT` / `THEM` refer to the last object mentioned.
 
-### 移动
+### Movement
 
 ```text
 NORTH / SOUTH / EAST / WEST / UP / DOWN
 N / S / E / W / U / D
-GO <出口>        ENTER <地点>        EXIT
-BOARD <飞船>
+GO <exit>          ENTER <place>          EXIT
+BOARD <ship>
 ```
 
-### 探索与物品
+### Exploration and objects
 
 ```text
-LOOK             EXAMINE <对象>       READ <对象>
-SEARCH <对象>    TAKE <对象>          TAKE ALL
-DROP <对象>      INVENTORY / I
-OPEN / CLOSE <对象>
-UNLOCK <对象> WITH <钥匙>
-WEAR / REMOVE <衣物>
-PUT <对象> IN / ON <容器>
+LOOK               EXAMINE <object>       READ <object>
+SEARCH <object>    TAKE <object>          TAKE ALL
+DROP <object>      INVENTORY / I
+OPEN / CLOSE <object>
+UNLOCK <object> WITH <key>
+WEAR / REMOVE <clothing>
+PUT <object> IN / ON <container>
 ```
 
-### 人物与谜题
+### Characters and puzzles
 
 ```text
-TALK TO <人物>
-ASK <人物> ABOUT <话题>
-GIVE <对象> TO <人物>
-SHOW <对象> TO <人物>
-USE <对象> [ON <对象>]
-PUSH / PULL / PRESS / TURN / SWITCH <对象>
-SET <对象> TO <值>
-TYPE <文字>
-SAY <话>
+TALK TO <character>
+ASK <character> ABOUT <topic>
+GIVE <object> TO <character>
+SHOW <object> TO <character>
+USE <object> [ON <object>]
+PUSH / PULL / PRESS / TURN / SWITCH <object>
+SET <object> TO <value>
+TYPE <text>
+SAY <words>
 ```
 
-### 元命令
+### Meta commands
 
 ```text
-GUIDE              列出已解锁的指南条目
-GUIDE <话题>       阅读条目
-HINT               当前进度的提示（不扣分）
-MAP                显示已访问场景的地图
-SCORE              查看分数、等级和统计
-SAVE [名字]        保存（默认 quicksave）
-LOAD [名字]        读取（默认 quicksave）
-UNDO               撤销一回合
-RESTART            重新开始（需要确认）
-ACHIEVEMENTS       查看成就
-QUIT               离开游戏
+GUIDE              list unlocked Guide entries
+GUIDE <topic>      read an entry
+HINT               a hint for the current puzzle (never costs points)
+MAP                show a map of visited locations
+SCORE              show score, rank, and statistics
+SAVE [name]        save (default: quicksave)
+LOAD [name]        load (default: quicksave)
+UNDO               undo one turn
+RESTART            start over (asks for confirmation)
+ACHIEVEMENTS       list achievements
+QUIT               leave the game
 ```
 
 ---
 
-## 系统特色
+## Features
 
-- **三幕完整流程**：每一幕都有独立的地图、谜题链、角色对话和结局。
-- **宽容的解析器**：支持 `PICK UP`、`LOOK AT`、`PUT X IN Y`、`USE X ON Y`、`ASK X ABOUT Y`、代词、`TAKE ALL` 和方向缩写。
-- **可解锁的《指南》**：20 条幽默条目，通过探索、交谈和推进剧情解锁。`GUIDE` 随时可读。
-- **不会卡死的死亡**：死亡会自动回退一回合，并恢复死亡前的状态；游戏没有不可挽回的死局。
-- **提示不扣分**：`HINT` 只影响指南对你的评价，不影响分数。
-- **计分与评价**：每幕 100 分，总计 300 分；根据总分获得不同等级，并解锁成就。
-- **多种结局**：第二幕有两种执政路线，第三幕有两种最终选择。每种选择都值满分，也都需要承担后果。
-- **存档**：JSON 格式；源码运行时位于 `saves/`，安装后位于系统用户数据目录（Windows 为 `%LOCALAPPDATA%\foundation-guide\saves`），可用 `FOUNDATION_GUIDE_SAVE_DIR` 覆盖。幕间自动存档，也可以随时手动保存。
-- **纯标准库**：没有第三方依赖，克隆即可运行。
+- **A complete three-act campaign**: every act has its own map, puzzle chain, character dialogue, and endings.
+- **A forgiving parser**: supports `PICK UP`, `LOOK AT`, `PUT X IN Y`, `USE X ON Y`, `ASK X ABOUT Y`, pronouns, `TAKE ALL`, and direction abbreviations.
+- **An unlockable Guide**: 20 comic entries unlocked through exploration, conversation, and story progress. Read them any time with `GUIDE`.
+- **Death without dead ends**: dying rewinds one turn and restores the state from before the fatal choice. There are no unrecoverable failures.
+- **Hints never cost points**: `HINT` only affects the Guide's opinion of you, never your score.
+- **Scoring and ranks**: 100 points per act, 300 in total. Your final score determines your rank and unlocks achievements.
+- **Multiple endings**: two political paths in Act II and two final choices in Act III. Every choice is worth full marks, and every choice has consequences.
+- **Saves**: JSON format. Source runs keep saves in `saves/`; installed copies use the platform's user-data directory (on Windows, `%LOCALAPPDATA%\foundation-guide\saves`). Override it with `FOUNDATION_GUIDE_SAVE_DIR`. The game autosaves between acts and lets you save at any time.
+- **Standard library only**: no third-party dependencies. Clone it and run.
 
 ---
 
-## 攻略与测试
+## Walkthrough and Tests
 
-完整攻略在 **[walkthrough.md](walkthrough.md)**，包含三幕的推荐路线、两种结局和计分明细。攻略含大量剧透，建议先自己玩一遍。
+The full walkthrough is in **[walkthrough.md](walkthrough.md)**, with recommended routes for all three acts, both endings, and a scoring breakdown. It contains heavy spoilers; play the game once first.
 
-运行自动化测试：
+Run the automated tests:
 
 ```powershell
 uv run python -m unittest discover -s tests -v
 ```
 
-当前测试覆盖：
+The current suite covers:
 
-- 解析器的方向、复合动词、冠词、代词、`USE ... ON ...`、`SET ... TO ...` 等行为
-- 三幕世界的完整性（出口、物品位置、NPC 位置、指南条目）
-- 第一幕 100 分路线
-- 第二幕“信仰”与“贸易”两种结局，各 100 分
-- 第三幕“安静的一枪”与“沉默”两种结局，各 100 分
-- 三幕连续通关 300 分
-- 提示不扣分、死亡回退、存读档、指南查找
+- parser behaviour: directions, compound verbs, articles, pronouns, `USE ... ON ...`, `SET ... TO ...`, and more
+- integrity of all three worlds: exits, object placement, NPC placement, and Guide entries
+- the 100-point route through Act I
+- both Act II endings, "faith" and "trade", at 100 points each
+- both Act III endings, the quiet shot and the silence, at 100 points each
+- a continuous three-act run at 300 points
+- hints not costing points, death rewind, save/load, and Guide lookup
 
-也可以直接播放脚本，观察完整流程：
+You can also play the full script directly to watch the whole story:
 
 ```powershell
 uv run python -m foundation_guide --script tests\walkthrough_full.txt --no-color
@@ -183,27 +181,27 @@ uv run python -m foundation_guide --script tests\walkthrough_full.txt --no-color
 
 ---
 
-## 项目结构
+## Project Structure
 
 ```text
 foundation-guide/
 ├─ foundation_guide/
-│  ├─ __main__.py        命令行入口与菜单
-│  ├─ engine.py          游戏循环、命令分派、计分、存读档
-│  ├─ model.py           Room / Object / NPC / Exit / World 数据模型
-│  ├─ state.py           ActState 与 Meta 的可序列化状态
-│  ├─ parser.py          宽容的英文命令解析器
-│  ├─ ui.py              终端输出、换行、颜色、脚本模式
-│  ├─ guide.py           20 条《指南》条目
+│  ├─ __main__.py        command-line entry point and menu
+│  ├─ engine.py          game loop, command dispatch, scoring, saves
+│  ├─ model.py           Room / Object / NPC / Exit / World data model
+│  ├─ state.py           serialisable ActState and Meta state
+│  ├─ parser.py          forgiving English command parser
+│  ├─ ui.py              terminal output, wrapping, colour, script mode
+│  ├─ guide.py           20 Guide entries
 │  └─ episodes/
-│     ├─ act1.py         第一幕：心理史学家
-│     ├─ act2.py         第二幕：市长
-│     └─ act3.py         第三幕：骡
+│     ├─ act1.py         Act I: The Psychohistorians
+│     ├─ act2.py         Act II: The Mayors
+│     └─ act3.py         Act III: The Mule
 ├─ tests/
-│  ├─ test_game.py       自动化测试
-│  ├─ walkthrough_*.txt  各幕与全流程脚本
-│  └─ run_act.py         单幕调试运行器
-├─ saves/                存档目录
+│  ├─ test_game.py       automated tests
+│  ├─ walkthrough_*.txt  act-by-act and full-game scripts
+│  └─ run_act.py         single-act debugging runner
+├─ saves/                save directory for source runs
 ├─ pyproject.toml
 ├─ play.bat
 ├─ walkthrough.md
@@ -212,18 +210,18 @@ foundation-guide/
 
 ---
 
-## 设计说明
+## Design Notes
 
-游戏采用数据驱动的结构：每一幕都是一个 `World`，其中包含房间、物品、NPC 和出口。所有可变状态集中在 `ActState` 中，因此存档、读档和撤销都只是状态的序列化或快照。NPC 对话、谜题条件和计分事件以回调函数的形式挂在数据对象上，使剧情逻辑与引擎分离。
+The game is data-driven. Each act is a `World` containing rooms, objects, NPCs, and exits. All mutable state lives in `ActState`, so saving, loading, and undo are just serialisation and snapshots. NPC dialogue, puzzle conditions, and scoring events are callbacks attached to the data objects, keeping story logic separate from the engine.
 
-文本风格尽量贴近两位原作者的混合物：阿西莫夫式的历史尺度与政治逻辑，加上亚当斯式的脚注、官僚主义的荒诞，以及一条永远不该被低估的毛巾。
+The prose aims for a mixture of the two authors: Asimov's historical scale and political logic, plus Adams' footnotes, bureaucratic absurdity, and a towel that should never be underestimated.
 
 ---
 
-## 致谢
+## Credits
 
-- 故事与角色来自艾萨克·阿西莫夫的《基地》三部曲。
-- 幽默风格致敬道格拉斯·亚当斯的《银河系漫游指南》。
-- 本作是非商业性的粉丝作品，仅供学习与娱乐。
+- Story and characters from Isaac Asimov's *Foundation* trilogy.
+- Comic style inspired by Douglas Adams' *The Hitchhiker's Guide to the Galaxy*.
+- A non-commercial fan work, made for learning and entertainment.
 
-所以，别慌。带上毛巾。历史正在看着你。
+So don't panic. Bring a towel. History is watching.
