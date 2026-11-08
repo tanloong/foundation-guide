@@ -1,0 +1,13 @@
+[project]
+name = "foundation-guide"
+version = "1.0.0"
+description = "The Hitchhiker's Guide to the Foundation - a CLI text adventure"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = []
+
+[tool.uv]
+package = false
+
+[tool.pytest.ini_options]
+pythonpath = ["."]

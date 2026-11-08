@@ -1,0 +1,44 @@
+# Act III walkthrough (quiet ending)
+read newspaper
+talk to magnifico
+east
+up
+read itinerary
+open wardrobe
+take uniform
+wear uniform
+open minibar
+take wine
+down
+west
+north
+give wine to major-domo
+east
+open trophy case
+take visi-sonor
+west
+south
+give visi-sonor to magnifico
+south
+board yacht
+open locker
+take glowlamp
+take blaster
+take credentials
+set course to trantor
+pull lever
+search rubble
+down
+show credentials to caretaker
+east
+read star atlas
+use visi-sonor on mis
+west
+up
+board yacht
+set course to rossem
+pull lever
+north
+talk to elder
+east
+shoot mis

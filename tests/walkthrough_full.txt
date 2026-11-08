@@ -1,0 +1,131 @@
+# Act I smoke-test walkthrough
+take suitcase
+open suitcase
+read letter
+use visa on pedestal
+north
+use credit chip on fare machine
+board taxi
+show letter to clerk
+go elevator
+open door
+north
+use holo projector
+open drawer
+take library card
+take overdue book
+south
+go down
+go west
+read statue
+ask student about password
+say "don't panic"
+north
+give overdue book to librarian
+open archive door
+go archive
+take data tape
+read data tape
+west
+south
+go old wing
+north
+talk to seldon
+open drawer
+take prime radiant
+take decoy cube
+put prime radiant in towel
+south
+say no
+show data tape to chen
+give decoy cube to chen
+go launch bay
+read manifest
+board encyclopedia
+# Act II walkthrough (faith ending)
+read ultimatum
+read logic sheets
+take logic sheets
+open cabinet
+take whiskey
+east
+show logic sheets to pirenne
+west
+south
+read newspaper
+south
+talk to rodric
+give whiskey to rodric
+north
+east
+talk to verisof
+north
+open vault door
+go vault
+west
+south
+talk to verisof
+talk to aporat
+west
+west
+read reactor manual
+open supply crate
+take power cell
+south
+take waveguide
+north
+east
+east
+use waveguide on relay
+use power cell on relay
+use frequency card on relay
+use cipher on relay
+use relay
+west
+south
+talk to wienis
+say faith
+# Act III walkthrough (quiet ending)
+read newspaper
+talk to magnifico
+east
+up
+read itinerary
+open wardrobe
+take uniform
+wear uniform
+open minibar
+take wine
+down
+west
+north
+give wine to major-domo
+east
+open trophy case
+take visi-sonor
+west
+south
+give visi-sonor to magnifico
+south
+board yacht
+open locker
+take glowlamp
+take blaster
+take credentials
+set course to trantor
+pull lever
+search rubble
+down
+show credentials to caretaker
+east
+read star atlas
+use visi-sonor on mis
+west
+up
+board yacht
+set course to rossem
+pull lever
+north
+talk to elder
+east
+shoot mis

@@ -1,0 +1,43 @@
+# Act II walkthrough (faith ending)
+read ultimatum
+read logic sheets
+take logic sheets
+open cabinet
+take whiskey
+east
+show logic sheets to pirenne
+west
+south
+read newspaper
+south
+talk to rodric
+give whiskey to rodric
+north
+east
+talk to verisof
+north
+open vault door
+go vault
+west
+south
+talk to verisof
+talk to aporat
+west
+west
+read reactor manual
+open supply crate
+take power cell
+south
+take waveguide
+north
+east
+east
+use waveguide on relay
+use power cell on relay
+use frequency card on relay
+use cipher on relay
+use relay
+west
+south
+talk to wienis
+say trade

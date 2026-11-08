@@ -1,0 +1,44 @@
+# Act I smoke-test walkthrough
+take suitcase
+open suitcase
+read letter
+use visa on pedestal
+north
+use credit chip on fare machine
+board taxi
+show letter to clerk
+go elevator
+open door
+north
+use holo projector
+open drawer
+take library card
+take overdue book
+south
+go down
+go west
+read statue
+ask student about password
+say "don't panic"
+north
+give overdue book to librarian
+open archive door
+go archive
+take data tape
+read data tape
+west
+south
+go old wing
+north
+talk to seldon
+open drawer
+take prime radiant
+take decoy cube
+put prime radiant in towel
+south
+say no
+show data tape to chen
+give decoy cube to chen
+go launch bay
+read manifest
+board encyclopedia
