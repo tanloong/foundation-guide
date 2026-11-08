@@ -1,13 +1,37 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
 [project]
 name = "foundation-guide"
 version = "1.0.0"
-description = "The Hitchhiker's Guide to the Foundation - a CLI text adventure"
+description = "The Hitchhiker's Guide to the Foundation - a CLI text adventure through Asimov's Foundation"
 readme = "README.md"
 requires-python = ">=3.11"
+authors = [{ name = "tanloong" }]
+keywords = ["game", "text-adventure", "cli", "asimov", "foundation", "hitchhikers-guide"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Console",
+    "Intended Audience :: End Users/Desktop",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Topic :: Games/Entertainment :: Puzzle Games",
+    "Topic :: Games/Entertainment :: Role-Playing",
+]
 dependencies = []
 
-[tool.uv]
-package = false
+[project.scripts]
+foundation-guide = "foundation_guide.__main__:main"
+
+[project.urls]
+Homepage = "https://github.com/tanloong/foundation-guide"
+Repository = "https://github.com/tanloong/foundation-guide"
+Issues = "https://github.com/tanloong/foundation-guide/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["foundation_guide"]
 
 [tool.pytest.ini_options]
 pythonpath = ["."]

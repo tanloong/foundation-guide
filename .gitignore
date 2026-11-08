@@ -1,5 +1,10 @@
 .venv/
+dist/
+build/
+*.egg-info/
 __pycache__/
 *.py[cod]
 saves/*.json
 tests/*_out.txt
+.pypi-token
+.env

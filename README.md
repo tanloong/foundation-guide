@@ -2,6 +2,8 @@
 
 **THE HITCHHIKER'S GUIDE TO THE FOUNDATION**
 
+[![PyPI](https://img.shields.io/pypi/v/foundation-guide.svg)](https://pypi.org/project/foundation-guide/) [![Python](https://img.shields.io/pypi/pyversions/foundation-guide.svg)](https://pypi.org/project/foundation-guide/)
+
 一个运行在终端里的英文文字冒险游戏。三名主角，三幕故事，三十四个场景，一百四十六件物品，二十三个角色，以及一条毛巾。
 
 故事发生在艾萨克·阿西莫夫《基地》三部曲的宇宙里，叙述方式则借用了道格拉斯·亚当斯《银河系漫游指南》的刻薄幽默。你将依次扮演盖尔·多尼克、萨尔沃·哈丁和贝泰·达瑞尔，在心理史学的裂缝里生存、谈判、解谜，并决定银河系的未来要不要被一个穿小丑服的人拿走。
@@ -12,14 +14,23 @@
 
 ## 快速开始
 
-### 环境要求
+### 从 PyPI 安装
 
-- Python 3.11 或更高版本
-- [uv](https://docs.astral.sh/uv/)
+```powershell
+pip install foundation-guide
+foundation-guide
+```
 
-项目只使用 Python 标准库，没有第三方依赖。
+也可以安装为独立的命令行工具：
 
-### 启动
+```powershell
+uv tool install foundation-guide
+foundation-guide
+```
+
+### 从源码运行
+
+环境要求：Python 3.11 或更高版本，以及 [uv](https://docs.astral.sh/uv/)。项目只使用 Python 标准库，没有第三方依赖。
 
 在 Windows 上，直接双击：
 
@@ -139,7 +150,7 @@ QUIT               离开游戏
 - **提示不扣分**：`HINT` 只影响指南对你的评价，不影响分数。
 - **计分与评价**：每幕 100 分，总计 300 分；根据总分获得不同等级，并解锁成就。
 - **多种结局**：第二幕有两种执政路线，第三幕有两种最终选择。每种选择都值满分，也都需要承担后果。
-- **存档**：JSON 格式，位于 `saves/`；幕间自动存档，也可以随时手动保存。
+- **存档**：JSON 格式；源码运行时位于 `saves/`，安装后位于系统用户数据目录（Windows 为 `%LOCALAPPDATA%\foundation-guide\saves`），可用 `FOUNDATION_GUIDE_SAVE_DIR` 覆盖。幕间自动存档，也可以随时手动保存。
 - **纯标准库**：没有第三方依赖，克隆即可运行。
 
 ---

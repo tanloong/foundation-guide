@@ -5,7 +5,9 @@ from __future__ import annotations
 import copy
 import difflib
 import json
+import os
 import re
+import sys
 import time
 from datetime import datetime
 from pathlib import Path
@@ -18,7 +20,26 @@ from .parser import VERBS, Command, parse
 from .state import ActState, Meta
 from .ui import UI, join_names
 
-SAVE_DIR = Path(__file__).resolve().parent.parent / "saves"
+def _default_save_dir() -> Path:
+    """Keep saves beside a source checkout, and in user data when installed."""
+    override = os.environ.get("FOUNDATION_GUIDE_SAVE_DIR")
+    if override:
+        return Path(override).expanduser()
+
+    project_root = Path(__file__).resolve().parent.parent
+    if (project_root / "pyproject.toml").is_file():
+        return project_root / "saves"
+
+    if sys.platform == "win32":
+        base = Path(os.environ.get("LOCALAPPDATA", Path.home() / "AppData" / "Local"))
+    elif sys.platform == "darwin":
+        base = Path.home() / "Library" / "Application Support"
+    else:
+        base = Path(os.environ.get("XDG_DATA_HOME", Path.home() / ".local" / "share"))
+    return base / "foundation-guide" / "saves"
+
+
+SAVE_DIR = _default_save_dir()
 SAVE_FORMAT = "foundation-guide"
 SAVE_VERSION = 1
 CORE_GUIDE = {"THE GUIDE", "DON'T PANIC", "TOWEL"}
