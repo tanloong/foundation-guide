@@ -218,6 +218,13 @@ The prose aims for a mixture of the two authors: Asimov's historical scale and p
 
 ---
 
+## Contributors
+
+- **Tan Long** ([@tanloong](https://github.com/tanloong)) — project author, design, and direction.
+- **DeepSeek V4.1 Flash Free** (OpenCode) — AI pair programmer: code, prose, tests, packaging, and documentation.
+
+---
+
 ## Credits
 
 - Story and characters from Isaac Asimov's *Foundation* trilogy.
